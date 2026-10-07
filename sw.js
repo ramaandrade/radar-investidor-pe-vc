@@ -1,7 +1,7 @@
 // Service Worker - Radar do Investidor PE & VC
 // Caching offline ultra-rápido para leitura sem conexão no metrô / viagens
 
-const CACHE_NAME = 'pe-vc-fastpage-v1.0.0';
+const CACHE_NAME = 'pe-vc-fastpage-v1.0.1';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

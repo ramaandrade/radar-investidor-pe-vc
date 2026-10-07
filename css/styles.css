@@ -75,7 +75,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 100vh;
-  padding-bottom: calc(100px + env(safe-area-inset-bottom, 20px));
+  padding-bottom: calc(28px + env(safe-area-inset-bottom, 16px));
   line-height: 1.5;
   display: flex;
   justify-content: center;
