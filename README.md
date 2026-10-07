@@ -2,6 +2,9 @@
 
 **Aplicação Web Mobile (*Fast Page*) de Alto Impacto para Fechamento de Módulo e Pré-Avaliação.**
 
+🌐 **Acesse a Aplicação Online (Produção):** [https://ramaandrade.github.io/radar-investidor-pe-vc/](https://ramaandrade.github.io/radar-investidor-pe-vc/)  
+📦 **Repositório GitHub:** [https://github.com/ramaandrade/radar-investidor-pe-vc](https://github.com/ramaandrade/radar-investidor-pe-vc)
+
 ---
 
 ## 📱 Visão Geral da Solução
