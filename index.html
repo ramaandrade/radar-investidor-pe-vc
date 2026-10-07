@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0F172A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Passo 6: Radar do Investidor PE & VC - Fast Page mobile para fechamento de módulo e preparação de prova.">
+  <title>Passo 6 - Radar do Investidor: PE & VC</title>
+  
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/svg+xml" href="./assets/icon-192.svg">
+  <link rel="apple-touch-icon" href="./assets/icon-192.svg">
+
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <main class="mobile-app-wrapper" role="main">
+    
+    <!-- Barra Superior de Status & Telemetria -->
+    <header class="app-topbar">
+      <div id="offline-status-pill" class="offline-pill is-online" role="status" aria-live="polite">
+        <span class="status-dot"></span>
+        <span class="status-text">Online • Cache Ativo</span>
+      </div>
+
+      <div class="topbar-actions">
+        <button id="open-inspector-btn" class="telemetry-btn" title="Ver telemetria do aluno">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 20v-6M6 20V10M18 20V4"/>
+          </svg>
+          Scroll: <strong id="telemetry-scroll-badge">0%</strong>
+        </button>
+      </div>
+    </header>
+
+    <!-- Bloco Hero / Cabeçalho de Contexto -->
+    <section class="app-hero">
+      <span class="hero-tag">Módulo: Investimentos Alternativos • Fechamento</span>
+      <h1 class="hero-title">
+        Passo 6: <span class="gradient-text">Radar do Investidor</span><br>
+        PE & VC
+      </h1>
+      <p class="hero-description">
+        Choque de realidade, mentalidade de risco e toolkit prático antes de você encarar a avaliação.
+      </p>
+
+      <!-- Barra de Progresso de Leitura -->
+      <div class="progress-container" aria-label="Progresso da leitura">
+        <div class="progress-header">
+          <span class="progress-label">Progresso do Módulo</span>
+          <span id="reading-progress-text" class="progress-value">0/4 explorados</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div id="reading-progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controles Rápidos -->
+    <section class="quick-controls" aria-label="Controles da leitura">
+      <span class="section-hint">Tópicos Essenciais</span>
+      <button id="toggle-all-btn" class="toggle-all-button" type="button">Expandir todos</button>
+    </section>
+
+    <!-- Cards Modulares (Acordeão) -->
+    <div class="cards-container">
+
+      <!-- CARD A: Mindset do Capital Fechado -->
+      <article class="modular-card is-open" data-card-id="card-a" id="secao-mindset">
+        <button class="card-header" type="button" aria-expanded="true" aria-controls="content-card-a">
+          <div class="card-icon-wrapper color-a" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+          </div>
+          <div class="card-title-group">
+            <span class="card-badge">Card A • Comportamento</span>
+            <h2 class="card-title">O Mindset do Capital Fechado</h2>
+          </div>
+          <div class="card-chevron" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </div>
+        </button>
+
+        <div class="card-content" id="content-card-a">
+          <p class="content-lead">
+            No mercado privado, a psicologia do investidor tradicional é colocada à prova. Regras de ouro para não ser pego desprevenido:
+          </p>
+
+          <!-- Tópico 1: Power Law -->
+          <div class="topic-block">
+            <div class="topic-header">
+              <span class="topic-tag">Estatística</span>
+              <h3 class="topic-title">A "Power Law" (Lei de Potência)</h3>
+            </div>
+            <p class="topic-body">
+              No Venture Capital, <strong>esqueça a média</strong>. A regra matemática é impiedosa: de cada 10 startups que você investir:
+            </p>
+
+            <!-- Infográfico Power Law -->
+            <div class="power-law-widget">
+              <div class="power-law-title">
+                <span>Distros de Retorno em VC (10 Startups)</span>
+              </div>
+              <div class="power-law-bars">
+                <div class="bar-fail" title="6 Falências (60%)">60% Falam</div>
+                <div class="bar-tie" title="3 Empates / Lucro Marginal (30%)">30% Empate</div>
+                <div class="bar-unicorn" title="1 Unicórnio (10%)">10% 🦄</div>
+              </div>
+              <div class="power-law-legend">
+                <div class="legend-item">
+                  <span class="dot-indicator dot-red"></span>
+                  <span><strong>6 vão falir:</strong> Perda de 100% do capital alocado.</span>
+                </div>
+                <div class="legend-item">
+                  <span class="dot-indicator dot-amber"></span>
+                  <span><strong>3 vão empatar:</strong> Retorno marginal ou devolvem o valor investido.</span>
+                </div>
+                <div class="legend-item">
+                  <span class="dot-indicator dot-green"></span>
+                  <span><strong>1 (O "Unicórnio"):</strong> Paga a conta de todo o resto e gera o grande lucro da carteira.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="callout-box callout-warning">
+              <span class="callout-icon">💡</span>
+              <div>
+                <strong>Aviso de Choque:</strong> Você precisa estar psicologicamente confortável com o erro frequente para colher o acerto extraordinário.
+              </div>
+            </div>
+          </div>
+
+          <!-- Tópico 2: Iliquidez Extrema -->
+          <div class="topic-block">
+            <div class="topic-header">
+              <span class="topic-tag">Prazos</span>
+              <h3 class="topic-title">Iliquidez Extrema: Dinheiro Trancado</h3>
+            </div>
+            <p class="topic-body">
+              Diferente de apertar um botão e vender uma ação na Bolsa em 3 segundos, em PE e VC o seu dinheiro fica trancado.
+            </p>
+            <div class="callout-box callout-warning">
+              <span class="callout-icon">⏳</span>
+              <div>
+                <strong>Horizonte de 5 a 10 anos:</strong> O desinvestimento (saída) só ocorre via <strong>fusão, aquisição (M&A) ou IPO</strong>. Não invista o dinheiro do supermercado nem da reserva de emergência!
+              </div>
+            </div>
+          </div>
+
+          <!-- Tópico 3: Informação Assimétrica -->
+          <div class="topic-block">
+            <div class="topic-header">
+              <span class="topic-tag">Acesso</span>
+              <h3 class="topic-title">Informação é Assimétrica</h3>
+            </div>
+            <p class="topic-body">
+              Na Bolsa de Valores (Renda Variável pública), as informações são padronizadas via balanços e fatos relevantes na CVM. No capital privado, os melhores negócios (o <strong>Deal Flow</strong>) dependem inteiramente da sua <strong>rede de contatos (networking)</strong> e da credibilidade dos fundadores.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD B: Venture Capital vs Private Equity -->
+      <article class="modular-card" data-card-id="card-b" id="secao-comparativo">
+        <button class="card-header" type="button" aria-expanded="false" aria-controls="content-card-b">
+          <div class="card-icon-wrapper color-b" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>
+            </svg>
+          </div>
+          <div class="card-title-group">
+            <span class="card-badge">Card B • Estratégia</span>
+            <h2 class="card-title">Entendendo o Jogo (VC vs. PE)</h2>
+          </div>
+          <div class="card-chevron" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </div>
+        </button>
+
+        <div class="card-content" id="content-card-b">
+          <p class="content-lead">
+            Embora ambos comprem participações em empresas fora da Bolsa, a tese e a mecânica financeira são completamente opostas:
+          </p>
+
+          <div class="vs-grid">
+            <!-- VC Column -->
+            <div class="vs-col vc-col">
+              <div class="vs-header">
+                <span>Venture Capital</span>
+                <span class="vs-badge-small">O Jogo do Crescimento</span>
+              </div>
+              <ul class="vs-list">
+                <li>
+                  <strong>Estágio:</strong>
+                  Startups embrionárias e base tecnológica.
+                </li>
+                <li>
+                  <strong>Risco:</strong>
+                  Altíssimo (chances elevadas de mortalidade).
+                </li>
+                <li>
+                  <strong>Múltiplo:</strong>
+                  Multiplicações assimétricas: 10x, 50x ou até 100x+.
+                </li>
+                <li>
+                  <strong>Métrica Chave:</strong>
+                  Top-line Growth e <strong>Burn Rate</strong> (queima de caixa mensal). Lucro imediato não é prioridade.
+                </li>
+              </ul>
+            </div>
+
+            <!-- PE Column -->
+            <div class="vs-col pe-col">
+              <div class="vs-header">
+                <span>Private Equity</span>
+                <span class="vs-badge-small">O Jogo da Eficiência</span>
+              </div>
+              <ul class="vs-list">
+                <li>
+                  <strong>Estágio:</strong>
+                  Empresas maduras, consolidadas e com receita comprovada.
+                </li>
+                <li>
+                  <strong>Risco:</strong>
+                  Moderado/Controlado (choque de gestão).
+                </li>
+                <li>
+                  <strong>Múltiplo:</strong>
+                  Previsível: 2x a 5x com alavancagem estruturada.
+                </li>
+                <li>
+                  <strong>Métrica Chave:</strong>
+                  Otimização de <strong>EBITDA</strong> (lucro operacional), governança e consolidação (roll-up).
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Tabela Resumo para a Prova -->
+          <table class="fast-comparison-table" aria-label="Comparativo rápido VC vs PE">
+            <thead>
+              <tr>
+                <th>Critério</th>
+                <th>Venture Capital</th>
+                <th>Private Equity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Perfil</strong></td>
+                <td>Apostar em hipóteses futuras</td>
+                <td>Otimizar operações existentes</td>
+              </tr>
+              <tr>
+                <td><strong>Cheque</strong></td>
+                <td>Seed a Series B (médio)</td>
+                <td>Dezenas de milhões (pesado)</td>
+              </tr>
+              <tr>
+                <td><strong>Foco</strong></td>
+                <td>Ganho de escala rápida</td>
+                <td>Rentabilidade e margem operacional</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- CARD C: Como Começar Sem Ser Milionário -->
+      <article class="modular-card" data-card-id="card-c" id="secao-acoes">
+        <button class="card-header" type="button" aria-expanded="false" aria-controls="content-card-c">
+          <div class="card-icon-wrapper color-c" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="card-title-group">
+            <span class="card-badge">Card C • Ações Práticas</span>
+            <h2 class="card-title">Como Começar Sem Ser Milionário</h2>
+          </div>
+          <div class="card-chevron" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </div>
+        </button>
+
+        <div class="card-content" id="content-card-c">
+          <p class="content-lead">
+            Você não precisa de R$ 10 milhões para se expor ao capital fechado. Veja as duas vias regulamentadas no Brasil:
+          </p>
+
+          <!-- Ação 1: Equity Crowdfunding -->
+          <div class="action-card">
+            <div class="action-card-header">
+              <h3 class="action-card-title">1. Equity Crowdfunding (CVM 88)</h3>
+              <span class="ticket-badge">A partir de R$ 1k</span>
+            </div>
+            <p class="topic-body">
+              A <strong>Resolução CVM 88</strong> revolucionou o ecossistema brasileiro. Hoje, com aportes a partir de <strong>R$ 1.000 a R$ 5.000</strong>, qualquer pessoa física pode co-investir em startups ao lado de grandes fundos institucionais e investidores anjo líderes, de forma 100% digital e legalmente resguardada por contratos de mútuo conversível.
+            </p>
+          </div>
+
+          <!-- Ação 2: FIPs -->
+          <div class="action-card">
+            <div class="action-card-header">
+              <h3 class="action-card-title">2. Fundos de Participação (FIPs)</h3>
+              <span class="ticket-badge">Via Corretora</span>
+            </div>
+            <p class="topic-body">
+              Para quem já opera no home broker ou corretora, os <strong>FIPs (Fundos de Investimento em Participações)</strong> permitem terceirizar toda a tese e a escolha das empresas para gestoras consagradas de PE e VC. Existem opções listadas e acessíveis a investidores qualificados ou ao público geral.
+            </p>
+          </div>
+
+          <!-- Dica do Professor -->
+          <div class="callout-box callout-tip">
+            <span class="callout-icon">🎯</span>
+            <div>
+              <strong>Dica de Ouro do Professor:</strong> Nunca coloque mais do que <strong>5% a 10%</strong> do seu patrimônio líquido em ativos de risco ilíquidos. E lembre-se: pulverize o valor em ao menos 10 startups diferentes para ativar a Lei de Potência!
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD D: Toolkit da Internet -->
+      <article class="modular-card" data-card-id="card-d" id="secao-toolkit">
+        <button class="card-header" type="button" aria-expanded="false" aria-controls="content-card-d">
+          <div class="card-icon-wrapper color-d" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <div class="card-title-group">
+            <span class="card-badge">Card D • Toolkit & Deal Flow</span>
+            <h2 class="card-title">Toolkit da Internet: Onde se Atualizar?</h2>
+          </div>
+          <div class="card-chevron" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </div>
+        </button>
+
+        <div class="card-content" id="content-card-d">
+          <p class="content-lead">
+            Os atalhos favoritos dos analistas profissionais de PE e VC. Toque para acessar as fontes oficiais em nova aba:
+          </p>
+
+          <!-- Categoria 1: Bancos de Dados -->
+          <div class="toolkit-category">
+            <h3 class="toolkit-category-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+              </svg>
+              Bancos de Dados & Inteligência de Mercado
+            </h3>
+            <div class="toolkit-grid">
+              
+              <a href="https://www.crunchbase.com" target="_blank" rel="noopener noreferrer" 
+                 class="toolkit-link-btn" data-tool-name="Crunchbase" data-category="Database">
+                <div class="toolkit-link-info">
+                  <span class="toolkit-link-title">Crunchbase</span>
+                  <span class="toolkit-link-desc">Maior banco global de rodadas, investidores e valuations.</span>
+                </div>
+                <div class="toolkit-ext-icon" title="Abrir link externo">↗</div>
+              </a>
+
+              <a href="https://pitchbook.com" target="_blank" rel="noopener noreferrer" 
+                 class="toolkit-link-btn" data-tool-name="PitchBook" data-category="Database">
+                <div class="toolkit-link-info">
+                  <span class="toolkit-link-title">PitchBook</span>
+                  <span class="toolkit-link-desc">Relatórios profundos de PE institucional e múltiplos de saída.</span>
+                </div>
+                <div class="toolkit-ext-icon" title="Abrir link externo">↗</div>
+              </a>
+
+              <a href="https://slinghub.com.br" target="_blank" rel="noopener noreferrer" 
+                 class="toolkit-link-btn" data-tool-name="Sling Hub" data-category="Database">
+                <div class="toolkit-link-info">
+                  <span class="toolkit-link-title">Sling Hub</span>
+                  <span class="toolkit-link-desc">Inteligência de startups e deals no Brasil e América Latina.</span>
+                </div>
+                <div class="toolkit-ext-icon" title="Abrir link externo">↗</div>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Categoria 2: Notícias e Mídia -->
+          <div class="toolkit-category">
+            <h3 class="toolkit-category-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
+              </svg>
+              Leitura Diária Obrigatória (Notícias & Deals)
+            </h3>
+            <div class="toolkit-grid">
+              
+              <a href="https://braziljournal.com" target="_blank" rel="noopener noreferrer" 
+                 class="toolkit-link-btn" data-tool-name="Brazil Journal" data-category="News">
+                <div class="toolkit-link-info">
+                  <span class="toolkit-link-title">Brazil Journal</span>
+                  <span class="toolkit-link-desc">Cobertura cirúrgica de grandes fusões, aquisições e fundadores.</span>
+                </div>
+                <div class="toolkit-ext-icon" title="Abrir link externo">↗</div>
+              </a>
+
+              <a href="https://pipelinevalor.globo.com" target="_blank" rel="noopener noreferrer" 
+                 class="toolkit-link-btn" data-tool-name="Pipeline Valor" data-category="News">
+                <div class="toolkit-link-info">
+                  <span class="toolkit-link-title">Pipeline (Valor Econômico)</span>
+                  <span class="toolkit-link-desc">Furos e bastidores de rodadas e consolidações no país.</span>
+                </div>
+                <div class="toolkit-ext-icon" title="Abrir link externo">↗</div>
+              </a>
+
+              <a href="https://startups.com.br" target="_blank" rel="noopener noreferrer" 
+                 class="toolkit-link-btn" data-tool-name="Startups.com.br" data-category="News">
+                <div class="toolkit-link-info">
+                  <span class="toolkit-link-title">Startups.com.br</span>
+                  <span class="toolkit-link-desc">Portal diário de novidades do ecossistema de inovação brasileiro.</span>
+                </div>
+                <div class="toolkit-ext-icon" title="Abrir link externo">↗</div>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Categoria 3: Plataformas de Equity Crowdfunding -->
+          <div class="toolkit-category">
+            <h3 class="toolkit-category-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+              Plataformas para Analisar Pitch Decks
+            </h3>
+            <div class="toolkit-grid">
+              
+              <a href="https://captable.com.br" target="_blank" rel="noopener noreferrer" 
+                 class="toolkit-link-btn" data-tool-name="Captable" data-category="Crowdfunding">
+                <div class="toolkit-link-info">
+                  <span class="toolkit-link-title">Captable</span>
+                  <span class="toolkit-link-desc">Startups abertas para captação com relatórios detalhados.</span>
+                </div>
+                <div class="toolkit-ext-icon" title="Abrir link externo">↗</div>
+              </a>
+
+              <a href="https://eqseed.com" target="_blank" rel="noopener noreferrer" 
+                 class="toolkit-link-btn" data-tool-name="EqSeed" data-category="Crowdfunding">
+                <div class="toolkit-link-info">
+                  <span class="toolkit-link-title">EqSeed</span>
+                  <span class="toolkit-link-desc">Pioneira em rodadas de equity crowdfunding reguladas pela CVM.</span>
+                </div>
+                <div class="toolkit-ext-icon" title="Abrir link externo">↗</div>
+              </a>
+
+              <a href="https://smu.com.br" target="_blank" rel="noopener noreferrer" 
+                 class="toolkit-link-btn" data-tool-name="SMU" data-category="Crowdfunding">
+                <div class="toolkit-link-info">
+                  <span class="toolkit-link-title">SMU</span>
+                  <span class="toolkit-link-desc">Rodadas estruturadas de co-investimento e syndicates.</span>
+                </div>
+                <div class="toolkit-ext-icon" title="Abrir link externo">↗</div>
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Sticky Footer CTA Fixo -->
+  <footer class="sticky-footer-wrapper">
+    <div class="sticky-footer-container">
+      <button id="sticky-cta-btn" class="sticky-cta-btn" type="button">
+        <div class="cta-text-group">
+          <span>Estou Pronto: Ir para a Prova</span>
+          <span id="cta-progress-indicator" class="cta-status-badge">1/4 tópicos</span>
+        </div>
+        <span class="cta-arrow" aria-hidden="true">→</span>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Modal / Bottom Sheet de Confirmação da Prova -->
+  <div id="exam-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="exam-modal-title">
+    <div class="modal-sheet">
+      <div class="sheet-handle"></div>
+      
+      <div class="modal-header">
+        <h2 id="exam-modal-title" class="modal-title">Pronto para a Avaliação?</h2>
+        <button class="close-modal-btn close-modal-trigger" type="button" aria-label="Fechar modal">✕</button>
+      </div>
+
+      <div id="exam-modal-notice"></div>
+
+      <div class="summary-bullets">
+        <div class="summary-bullets-title">Resumo Rápido Pré-Prova</div>
+        <ul class="summary-list">
+          <li><strong>Power Law:</strong> 1 unicórnio paga 6 falências e gera o retorno da carteira.</li>
+          <li><strong>Iliquidez:</strong> Capital trancado por 5 a 10 anos até o evento de saída (M&A ou IPO).</li>
+          <li><strong>VC vs. PE:</strong> VC foca em crescimento e Burn Rate; PE foca em EBITDA e eficiência.</li>
+          <li><strong>CVM 88:</strong> Equity Crowdfunding democratizou o acesso a partir de R$ 1.000.</li>
+        </ul>
+      </div>
+
+      <button id="start-exam-final-btn" class="modal-primary-btn" type="button">
+        Confirmar e Iniciar Prova
+      </button>
+      <button class="modal-secondary-btn close-modal-trigger" type="button">
+        Voltar e Revisar Conteúdo
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal de Telemetria do Professor -->
+  <div id="inspector-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="inspector-modal-title">
+    <div class="modal-sheet">
+      <div class="sheet-handle"></div>
+      
+      <div class="modal-header">
+        <h2 id="inspector-modal-title" class="modal-title">Painel de Telemetria (Professor)</h2>
+        <button class="close-modal-btn close-modal-trigger" type="button" aria-label="Fechar modal">✕</button>
+      </div>
+
+      <div class="telemetry-stats-row">
+        <div class="stat-box">
+          <div class="stat-label">Max Scroll</div>
+          <div id="inspector-max-scroll" class="stat-val">0%</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Eventos</div>
+          <div id="inspector-events-count" class="stat-val">0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Tempo Ativo</div>
+          <div id="inspector-session-time" class="stat-val">0s</div>
+        </div>
+      </div>
+
+      <div class="summary-bullets-title">Últimos Eventos Capturados:</div>
+      <div id="inspector-events-list" class="events-scroll-area">
+        <p style="font-size: 0.75rem; color: #94A3B8; text-align: center; padding: 10px;">Nenhum evento registrado ainda.</p>
+      </div>
+
+      <button id="copy-metrics-btn" class="modal-primary-btn" type="button">
+        Copiar Relatório JSON para LMS
+      </button>
+      <button id="close-inspector-btn" class="modal-secondary-btn" type="button">
+        Fechar Painel
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/analytics.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

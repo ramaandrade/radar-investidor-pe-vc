@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="radarGrad512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="50%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bgGrad512)" stroke="#334155" stroke-width="8"/>
+  <!-- Radar circles -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#334155" stroke-width="4" stroke-dasharray="10 10"/>
+  <circle cx="256" cy="256" r="120" fill="none" stroke="#475569" stroke-width="4"/>
+  <circle cx="256" cy="256" r="60" fill="none" stroke="#64748B" stroke-width="4"/>
+  <!-- Target lines -->
+  <line x1="256" y1="50" x2="256" y2="462" stroke="#334155" stroke-width="4"/>
+  <line x1="50" y1="256" x2="462" y2="256" stroke="#334155" stroke-width="4"/>
+  <!-- Radar sweep -->
+  <path d="M 256 256 L 380 132 A 180 180 0 0 0 256 76 Z" fill="url(#radarGrad512)" opacity="0.25"/>
+  <!-- Growth trend -->
+  <path d="M 150 336 L 220 270 L 280 310 L 370 176" fill="none" stroke="url(#radarGrad512)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="370" cy="176" r="14" fill="#10B981"/>
+  <!-- Center dot -->
+  <circle cx="256" cy="256" r="12" fill="#38BDF8"/>
+</svg>
